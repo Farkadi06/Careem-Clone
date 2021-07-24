@@ -1,14 +1,21 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
+import CovidMessage from '../components/CovidMessage'
+import HomeMap from '../components/HomeMap'
+import HomeSearch from '../components/HomeSearch'
 
 const HomeScreen = () => {
     return (
         <View>
-            <Text>Home Screen</Text>
+            <HomeMap/>
+            <CovidMessage/>
+            <HomeSearch/>
         </View>
     )
 }
 
 export default HomeScreen
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+
+})

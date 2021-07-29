@@ -3,13 +3,24 @@ import { StyleSheet, Text, View,Image } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
 const UberTypesRow = ({UberImage, UberType, UberTime, Price, Passagers}) => {
+
+    const getImage = () => {
+        if (UberImage === 'UberX') {
+          return require('../assets/images/UberX.jpeg');
+        }
+        if (UberImage === 'Comfort') {
+          return require('../assets/images/Comfort.jpeg');
+        }
+        return require('../assets/images/UberXL.jpeg');
+      }
+
     return (
         <View style={styles.container}>
             
         <Image
             style={styles.Image}
             source={
-                require("../assets/images/UberX.jpeg")
+                getImage()
             }/>
         
         <View >

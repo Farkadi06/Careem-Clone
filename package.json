@@ -9,12 +9,16 @@
   },
   "dependencies": {
     "@expo/metro-config": "^0.1.80",
+    "@gorhom/bottom-sheet": "^3.6.6",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-42.0.0.tar.gz",
+    "react-native-gesture-handler": "^1.10.3",
     "react-native-google-places-autocomplete": "^2.2.0",
+    "react-native-raw-bottom-sheet": "^2.2.0",
+    "react-native-reanimated": "^1.13.3",
     "react-native-web": "~0.13.12"
   },
   "devDependencies": {

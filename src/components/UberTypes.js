@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable  } from 'react-native'
 import UberTypesRow from './UberTypesRow'
 import typesData from '../types'
 import RBSheet from "react-native-raw-bottom-sheet";
-import { Feather } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const UberTypes = () => {
     const refRBSheet = useRef();
@@ -49,7 +49,7 @@ const UberTypes = () => {
 
         </RBSheet>
             <Pressable onPress={() => refRBSheet.current.open()} style={styles.SwipBtn}>
-                <Feather name={'menu'} size={44}  color="black" />
+                <Entypo name="arrow-bold-up" size={30} color="#26BC50" />
             </Pressable>
         </View>
 
@@ -68,14 +68,15 @@ const styles = StyleSheet.create({
         borderRadius:5
     },
     SwipBtn: {
-        margin: -32,
-        alignSelf:"center",
-        backgroundColor: "lightgrey",
+        marginTop: -250,
+        marginLeft: 300,
+        right: 0,
+        backgroundColor: "white",
+        borderRadius: 50,
         width: 50,
         height: 50,
         alignItems: "center",
         justifyContent: "center",
-        borderRadius: 25,
         borderColor: "lightgrey",
         borderWidth: 2,
     }

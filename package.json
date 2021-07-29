@@ -18,6 +18,7 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-google-places-autocomplete": "^2.2.0",
     "react-native-maps": "^0.28.0",
+    "react-native-maps-directions": "^1.8.0",
     "react-native-raw-bottom-sheet": "^2.2.0",
     "react-native-reanimated": "^1.13.3",
     "react-native-web": "~0.13.12"

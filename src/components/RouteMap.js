@@ -4,18 +4,14 @@ import MapView, { Marker } from 'react-native-maps'
 import { Entypo } from '@expo/vector-icons'
 import { Image } from 'react-native'
 import cars from '../cars'
+import MapViewDirections from 'react-native-maps-directions'
 
-const HomeMap = ({refRBSheet}) => {
-    
-    const getImage = (UberImage) => {
-        if (UberImage === 'UberX') {
-          return require('../assets/images/top-UberX.png');
-        }
-        if (UberImage === 'Comfort') {
-          return require('../assets/images/top-Comfort.png');
-        }
-        return require('../assets/images/top-UberXL.png');
-      }
+
+const RouteMap = () => {
+    const origin = {latitude: 30.423569749264747,longitude: -9.591809889342562};
+    const destination = {latitude:  30.43635857221633, longitude: -9.57292410141872};
+    const GOOGLE_MAPS_APIKEY = 'AIzaSyABqm9vVCciw9M9iUhFregokkE7mI75Niw';
+
 
     return (
         <View style={{height: '100%', backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>
@@ -30,25 +26,25 @@ const HomeMap = ({refRBSheet}) => {
             
                 }}
               >
-                  {
-                      cars.map(car => (
-                        <Marker 
-                        key={car.id}
-                        coordinate={{latitude: car.latitude,longitude: car.longitude}}>
-                            <Image 
-                                resizeMode={'contain'} 
-                                style={{width:50, height:50, resizeMode: 'contain'}}
-                                source={getImage(car.type)}/>
-                        </Marker>
-                      ))
-                  }
-              
+                <MapViewDirections
+                    lineDashPattern={[0]}
+                    origin={origin}
+                    destination={destination}
+                    apikey={GOOGLE_MAPS_APIKEY}
+                    strokeWidth={5}
+                    strokeColor={"#26BC50"}
+                />
+                <Marker 
+                    coordinate={{latitude: origin.latitude,longitude: origin.longitude}}/>
+                <Marker 
+                    coordinate={{latitude: destination.latitude,longitude: destination.longitude}}/>
+                    
             </MapView>
         </View>
     )
 }
 
-export default HomeMap
+export default RouteMap
 
 const styles = StyleSheet.create({
     container: {

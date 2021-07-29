@@ -1,21 +1,37 @@
 import React from 'react'
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import MapView from 'react-native-maps'
+import MapView, { Marker } from 'react-native-maps'
 import { Entypo } from '@expo/vector-icons'
+import { Image } from 'react-native'
+import cars from '../cars'
 
 const HomeMap = ({refRBSheet}) => {
     return (
-        <View style={{height: 300, backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>
+        <View style={{height: '100%', backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>
               <MapView 
                 provider={"google"}
                 style={styles.map}
                 initialRegion={{
-                latitude: 30.472863493373456,
-                longitude: -8.877082002834296,
+                latitude: 30,
+                longitude: -8,
                 latitudeDelta: 0.045,
                 longitudeDelta: 0.045,
                 }}
-      /> 
+              >
+                  {
+                      cars.map(car => (
+                        <Marker 
+                        key={car.id}
+                        coordinate={{latitude: car.latitude,longitude: car.longitude}}>
+                            <Image 
+                                resizeMode={'contain'} 
+                                style={{width:50, height:50, resizeMode: 'cover'}}
+                                source={require('../assets/images/top-UberX.png')}/>
+                        </Marker>
+                      ))
+                  }
+              
+            </MapView>
         </View>
     )
 }

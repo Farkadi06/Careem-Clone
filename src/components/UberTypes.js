@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable  } from 'react-native'
 import UberTypesRow from './UberTypesRow'
 import typesData from '../types'
 import RBSheet from "react-native-raw-bottom-sheet";
-import { Entypo } from '@expo/vector-icons';
+import { AntDesign, Entypo } from '@expo/vector-icons';
 
 const UberTypes = () => {
     const refRBSheet = useRef();
@@ -49,7 +49,7 @@ const UberTypes = () => {
 
         </RBSheet>
             <Pressable onPress={() => refRBSheet.current.open()} style={styles.SwipBtn}>
-                <Entypo name="arrow-bold-up" size={30} color="#26BC50" />
+                <AntDesign name="car" size={30} color="#26BC50" />
             </Pressable>
         </View>
 
@@ -68,8 +68,8 @@ const styles = StyleSheet.create({
         borderRadius:5
     },
     SwipBtn: {
-        marginTop: -250,
-        marginLeft: 300,
+        marginTop: -100,
+        marginLeft:200,
         right: 0,
         backgroundColor: "white",
         borderRadius: 50,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: "center",
         justifyContent: "center",
-        borderColor: "lightgrey",
+        borderColor: "#26BC50",
         borderWidth: 2,
     }
     

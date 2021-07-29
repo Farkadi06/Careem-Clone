@@ -10,8 +10,8 @@ const HomeScreen = () => {
         <View>
             <HomeMap/>
             <UberTypes/>
-            {/* <CovidMessage/>
-            <HomeSearch/> */}
+            {/* <CovidMessage/> */}
+            <HomeSearch/>
         </View>
     )
 }

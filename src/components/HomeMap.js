@@ -6,6 +6,17 @@ import { Image } from 'react-native'
 import cars from '../cars'
 
 const HomeMap = ({refRBSheet}) => {
+    
+    const getImage = (UberImage) => {
+        if (UberImage === 'UberX') {
+          return require('../assets/images/top-UberX.png');
+        }
+        if (UberImage === 'Comfort') {
+          return require('../assets/images/top-Comfort.png');
+        }
+        return require('../assets/images/top-UberXL.png');
+      }
+
     return (
         <View style={{height: '100%', backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>
               <MapView 
@@ -25,8 +36,8 @@ const HomeMap = ({refRBSheet}) => {
                         coordinate={{latitude: car.latitude,longitude: car.longitude}}>
                             <Image 
                                 resizeMode={'contain'} 
-                                style={{width:50, height:50, resizeMode: 'cover'}}
-                                source={require('../assets/images/top-UberX.png')}/>
+                                style={{width:50, height:50, resizeMode: 'contain'}}
+                                source={getImage(car.type)}/>
                         </Marker>
                       ))
                   }

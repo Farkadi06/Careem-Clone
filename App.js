@@ -8,7 +8,7 @@ import HomeScreen from './src/screens/HomeScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <DestinationSearch/>
+      <HomeScreen/>
       <StatusBar style="auto" />
     </View>
   );

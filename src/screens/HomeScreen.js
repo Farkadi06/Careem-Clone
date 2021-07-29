@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from 'react-native'
 import CovidMessage from '../components/CovidMessage'
 import HomeMap from '../components/HomeMap'
 import HomeSearch from '../components/HomeSearch'
+import UberTypes from '../components/UberTypes'
 
 const HomeScreen = () => {
     return (
         <View>
             <HomeMap/>
-            <CovidMessage/>
-            <HomeSearch/>
+            <UberTypes/>
+            {/* <CovidMessage/>
+            <HomeSearch/> */}
         </View>
     )
 }

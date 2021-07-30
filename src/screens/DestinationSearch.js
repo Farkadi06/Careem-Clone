@@ -8,6 +8,15 @@ const DestinationSearch = () => {
     const [orginPlace,setOrginPlace] = useState(null)
     const [destinationPlace,setDestinationPlace] = useState(null)
 
+    const homePlace = {
+        description: 'Home',
+        geometry: { location: { lat: 30.48748087805257, lng: -8.873698518403405 } },
+      };
+      const workPlace = {
+        description: 'Work - EHTP - Casablanca',
+        geometry: { location: { lat: 33.54711313127219, lng: -7.650132177734675 } },
+      };
+
     useEffect(()=>{
         if(orginPlace && destinationPlace){
             console.log("Redirect to results")
@@ -24,6 +33,8 @@ const DestinationSearch = () => {
                 <View style={styles.container}>
                 <GooglePlacesAutocomplete
                         placeholder='Current Location'
+                        currentLocationLabel= 'Current Location'
+                        currentLocation={true}
                         suppressDefaultStyles
                         enablePoweredByContainer={false}
                         styles={{
@@ -44,6 +55,8 @@ const DestinationSearch = () => {
                             },
                         }}
                         renderRow={(data)=> <PlaceRow data = {data}/>}
+                        renderDescription= {(data)=> data.description || data.vicinity}
+                        predefinedPlaces={[homePlace, workPlace]}
                         onPress={(data, details = null) => {
                             // 'details' is provided when fetchDetails = true
                             setDestinationPlace({data,details})

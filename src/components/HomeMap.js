@@ -21,6 +21,7 @@ const HomeMap = ({refRBSheet}) => {
         <View style={{height: '100%', backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>
               <MapView 
                 provider={"google"}
+                showsUserLocation={true}
                 style={styles.map}
                 initialRegion={{
                 latitude: 30,

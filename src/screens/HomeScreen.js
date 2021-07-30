@@ -9,7 +9,7 @@ import UberTypes from '../components/UberTypes'
 const HomeScreen = () => {
     return (
         <View>
-            <RouteMap/>
+            <HomeMap/>
             <UberTypes/>
             {/* <CovidMessage/> */}
             <HomeSearch/>

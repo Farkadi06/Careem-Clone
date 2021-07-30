@@ -37,8 +37,11 @@ const HomeMap = ({refRBSheet}) => {
                         coordinate={{latitude: car.latitude,longitude: car.longitude}}>
                             <Image 
                                 resizeMode={'contain'} 
-                                style={{width:50, height:50, resizeMode: 'contain'}}
-                                source={getImage(car.type)}/>
+                                style={{width:50, height:50, resizeMode: 'contain', transform: [{
+                                    rotate: `${car.heading}deg`
+                                }]}}
+                                source={getImage(car.type)}
+                                />
                         </Marker>
                       ))
                   }

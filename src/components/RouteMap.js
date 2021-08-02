@@ -5,13 +5,18 @@ import { Entypo } from '@expo/vector-icons'
 import { Image } from 'react-native'
 import cars from '../cars'
 import MapViewDirections from 'react-native-maps-directions'
+import { useEffect } from 'react'
 
 
-const RouteMap = () => {
-    const origin = {latitude: 30.423569749264747,longitude: -9.591809889342562};
-    const destination = {latitude:  30.43635857221633, longitude: -9.57292410141872};
+const RouteMap = (Route) => {
+    const origin = {latitude: Route.Route.orginPlace.details.geometry.location.lat,longitude: Route.Route.orginPlace.details.geometry.location.lng};
+    const destination = {latitude:  Route.Route.destinationPlace.details.geometry.location.lat, longitude: Route.Route.destinationPlace.details.geometry.location.lng};
     const GOOGLE_MAPS_APIKEY = 'AIzaSyABqm9vVCciw9M9iUhFregokkE7mI75Niw';
 
+    useEffect(()=>{
+        console.log("origin place : ",Route.Route.orginPlace.details.geometry.location.lat , " , ", Route.Route.orginPlace.details.geometry.location.lng)
+        console.log("Destination place : ",Route.Route.destinationPlace.details.geometry.location.lat , " , ",Route.Route.destinationPlace.details.geometry.location.lng)
+    },[])
 
     return (
         <View style={{height: '100%', backgroundColor:"#26BC50",justifyContent:"center",alignItems:"center"}}>

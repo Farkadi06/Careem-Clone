@@ -22,7 +22,7 @@ const DestinationSearch = () => {
     useEffect(()=>{
         if(orginPlace && destinationPlace){
             console.log("Redirect to results")
-            Navigation.navigate('SearchResult')
+            Navigation.navigate('SearchResult', {orginPlace, destinationPlace})
         }
     },[orginPlace, destinationPlace])
 

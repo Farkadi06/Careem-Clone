@@ -1,12 +1,19 @@
 import React, { useRef } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View} from 'react-native'
 import { AntDesign,Entypo,MaterialIcons,Feather } from '@expo/vector-icons'
 import RBSheet from 'react-native-raw-bottom-sheet'
 import { Pressable } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 
 const HomeSearch = () => {
     const refRBSheet2 = useRef();
+    const navigation = useNavigation();
+
+    const goSearch = () => {
+        navigation.navigate('DestinationSearch');
+    }
+
     return (
         <View>
             <RBSheet 
@@ -30,17 +37,17 @@ const HomeSearch = () => {
                 animationType = {"fade"}
                 >
                 {/* Input Box */}
-                <View style={styles.inputBox}>
+                <Pressable style={styles.inputBox} onPress={goSearch}>
                     <Text style={styles.inputText}>Where To?</Text>
                     <View style={styles.timeContainer}>
                         <AntDesign name={"clockcircle"} size={16} color={'#6e6e6e'}/>
                         <Text color={'#6e6e6e'}>Now</Text>
                         <MaterialIcons name={'keyboard-arrow-down'} size={16} color={'#6e6e6e'}/>
                     </View>
-                </View>
+                </Pressable>
 
                 {/* Input Boxs */}
-                <View style={styles.row}>
+                <View style={styles.row} >
                     <View style={styles.iconContainer}>
                         <AntDesign name={"clockcircle"} size={16} color={'#fff'}/>
                     </View>

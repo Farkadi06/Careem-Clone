@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { PermissionsAndroid, StyleSheet, Text, View } from 'react-native';
 import { useEffect } from 'react';
-import NavigationRoot from './src/Navigation/NavigationRoot';
+import NavigationRoute from './src/Navigation/NavigationRoute';
 
 export default function App() {
   const requestCameraPermission = async () => {
@@ -33,7 +33,7 @@ export default function App() {
   },[])
   return (
     <View style={styles.container}>
-        <NavigationRoot/>
+        <NavigationRoute />
       <StatusBar style="auto" />
     </View>
   );

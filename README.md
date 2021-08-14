@@ -1,8 +1,14 @@
 # Careem: UI Clone with Expo
-## 
-- Expo SDK 41
-- iOS and Android
-- React-native-maps
-- react-native-maps-directions
-- React Navigation
-- PropTypes
+#
+
+  [] Expo SDK 41
+
+  [x] iOS and Android
+
+  [x] React-native-maps
+
+  [x] React-native-maps-directions
+
+  [x] React Navigation
+
+  [x] PropTypes
